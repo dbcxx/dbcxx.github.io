@@ -1,193 +1,1975 @@
-<!DOCTYPE html>
-<html style="background-color: #ffffff;">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dolapo Bamidele — Frontend Engineer specializing in React and TypeScript across fintech, Web3, and EdTech platforms."
+    />
+    <meta name="theme-color" content="#121212" />
+    <title>Dolapo Bamidele — Frontend Engineer</title>
+    <script>
+      if (localStorage.getItem("theme") === "light")
+        document.documentElement.setAttribute("data-theme", "light");
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "deep-charcoal": "#121212",
+              "soft-black": "#1a1a1a",
+              ash: {
+                50: "#f7f7f6",
+                100: "#e3e3e1",
+                200: "#c8c8c4",
+                300: "#a6a6a0",
+                400: "#8a8a84",
+                500: "#6b6b67",
+                600: "#555551",
+                700: "#454542",
+                800: "#3a3a38",
+                900: "#31312f",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* ── CSS Custom Properties ── */
+      :root {
+        --bg-primary: #121212;
+        --bg-secondary: #1a1a1a;
+        --bg-panel-alt: #161616;
+        --bg-section: #0f0f0f;
+        --border-subtle: rgba(255, 255, 255, 0.03);
+        --shadow-a: #0d0d0d;
+        --shadow-b: #232323;
+        --btn-bg-from: #1f1f1f;
+        --btn-pri-from: #2a2a2a;
+        --btn-pri-to: #242424;
+        --btn-pri-hover-from: #313131;
+        --btn-pri-hover-to: #2b2b2b;
+        --btn-pri-hover-shadow-b: #3d3d3d;
+        --shadow-btn-a: #0f0f0f;
+        --shadow-btn-b: #292929;
+        --shadow-btn-pri-a: #0d0d0d;
+        --shadow-btn-pri-b: #353535;
+        --grid-line: rgba(255, 255, 255, 0.02);
+        --timeline-from: #31312f;
+        --timeline-mid: #6b6b67;
+        --syntax-comment: #454542;
+        --syntax-keyword: #6b6b67;
+        --syntax-string: #8a8a84;
+        --syntax-func: #a6a6a0;
+        --gradient-text-from: #e3e3e1;
+        --gradient-text-to: #8a8a84;
+        --selection-bg: rgba(166, 166, 160, 0.15);
+        --selection-color: #f7f7f6;
+        --focus-ring: #6b6b67;
+      }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Personal</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
-    <link rel="stylesheet" href="/assets/css/Devcons.css">
-    <link rel="stylesheet" href="/assets/css/Header-Blue.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/simple-footer.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-</head>
+      [data-theme="light"] {
+        --bg-primary: #f4f4f2;
+        --bg-secondary: #efefed;
+        --bg-panel-alt: #eaeae8;
+        --bg-section: #f0f0ee;
+        --border-subtle: rgba(0, 0, 0, 0.06);
+        --shadow-a: #d4d4d2;
+        --shadow-b: #ffffff;
+        --btn-bg-from: #f2f2f0;
+        --btn-pri-from: #e8e8e6;
+        --btn-pri-to: #e2e2e0;
+        --btn-pri-hover-from: #ebebea;
+        --btn-pri-hover-to: #e5e5e3;
+        --btn-pri-hover-shadow-b: #ffffff;
+        --shadow-btn-a: #c8c8c6;
+        --shadow-btn-b: #ffffff;
+        --shadow-btn-pri-a: #c0c0be;
+        --shadow-btn-pri-b: #fafaf8;
+        --grid-line: rgba(0, 0, 0, 0.03);
+        --timeline-from: #c8c8c4;
+        --timeline-mid: #8a8a84;
+        --syntax-comment: #a6a6a0;
+        --syntax-keyword: #6b6b67;
+        --syntax-string: #555551;
+        --syntax-func: #454542;
+        --gradient-text-from: #1a1a1a;
+        --gradient-text-to: #6b6b67;
+        --selection-bg: rgba(107, 107, 103, 0.15);
+        --selection-color: #1a1a1a;
+        --focus-ring: #8a8a84;
+      }
 
-<body>
-    <section>
-        <nav class="navbar navbar-light navbar-expand-md sticky-top shadow-sm">
-            <div class="container-fluid"><i class="fa fa-terminal" style="width: 50px;height: 50px;background-size: cover;background-position: 50%;font-size: 200%;padding-top: 10px;margin-right: -15px;"></i><a class="navbar-brand" href="/index.html">Sam</a><button data-toggle="collapse"
-                    class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">About</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#two">Projects</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#three">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
-    <div class="dev-personal" style="margin: 22px;padding: 10px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-8">
-                    <h1 class="text-left">I'm Sam</h1>
-                    <p>Web Developer</p>
-                    <p><br>I'm a web developer specializing in modern JavaScript who loves to learn new things about the interaction of websites with user response.<br><br></p>
-                </div>
-                <div class="col-md-6 col-lg-4"><img class="img-fluid" src="/assets/img/joker1.png" width="50%" height="50%" style="margin-left: 60px;"></div>
-            </div>
+      body {
+        background-color: var(--bg-primary);
+        color: #e3e3e1;
+        overflow-x: hidden;
+        transition: background-color 0.25s ease;
+      }
+
+      [data-theme="light"] body {
+        color: #1a1a1a;
+      }
+
+      /* Grain Texture */
+      .grain-overlay {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.025;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        animation: grain 8s steps(10) infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-5%, -5%);
+        }
+        20% {
+          transform: translate(-10%, 5%);
+        }
+        30% {
+          transform: translate(5%, -10%);
+        }
+        40% {
+          transform: translate(-5%, 15%);
+        }
+        50% {
+          transform: translate(-10%, 5%);
+        }
+        60% {
+          transform: translate(15%, 0);
+        }
+        70% {
+          transform: translate(0, 10%);
+        }
+        80% {
+          transform: translate(-15%, 0);
+        }
+        90% {
+          transform: translate(10%, 5%);
+        }
+      }
+
+      .grid-12 {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+      }
+
+      /* Neumorphic Soft UI */
+      .soft-panel {
+        background: linear-gradient(
+          145deg,
+          var(--bg-secondary),
+          var(--bg-panel-alt)
+        );
+        box-shadow:
+          20px 20px 60px var(--shadow-a),
+          -20px -20px 60px var(--shadow-b);
+        border: 1px solid var(--border-subtle);
+      }
+
+      .soft-button {
+        background: linear-gradient(
+          145deg,
+          var(--btn-bg-from),
+          var(--bg-secondary)
+        );
+        box-shadow:
+          5px 5px 10px var(--shadow-btn-a),
+          -5px -5px 10px var(--shadow-btn-b);
+        border: 1px solid var(--border-subtle);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .soft-button:hover {
+        box-shadow:
+          inset 5px 5px 10px var(--shadow-btn-a),
+          inset -5px -5px 10px var(--shadow-btn-b);
+        transform: translateY(1px);
+      }
+
+      .soft-button-primary {
+        background: linear-gradient(
+          145deg,
+          var(--btn-pri-from),
+          var(--btn-pri-to)
+        );
+        box-shadow:
+          8px 8px 16px var(--shadow-btn-pri-a),
+          -8px -8px 16px var(--shadow-btn-pri-b);
+        border: 1px solid var(--border-subtle);
+      }
+
+      .soft-button-primary:hover {
+        background: linear-gradient(
+          145deg,
+          var(--btn-pri-hover-from),
+          var(--btn-pri-hover-to)
+        );
+        transform: translateY(-2px);
+        box-shadow:
+          12px 12px 24px var(--shadow-btn-pri-a),
+          -12px -12px 24px var(--btn-pri-hover-shadow-b);
+      }
+
+      .arch-grid {
+        background-image:
+          linear-gradient(var(--grid-line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* Typography */
+      .text-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--gradient-text-from) 0%,
+          var(--gradient-text-to) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Code Syntax */
+      .syntax-comment {
+        color: var(--syntax-comment);
+        font-style: italic;
+      }
+      .syntax-keyword {
+        color: var(--syntax-keyword);
+        font-weight: 500;
+      }
+      .syntax-string {
+        color: var(--syntax-string);
+      }
+      .syntax-func {
+        color: var(--syntax-func);
+      }
+
+      /* Scroll Reveal Animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom Selection */
+      ::selection {
+        background: var(--selection-bg);
+        color: var(--selection-color);
+      }
+
+      /* Focus Visible for Accessibility */
+      :focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 4px;
+      }
+
+      /* Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        .grain-overlay {
+          animation: none;
+        }
+      }
+
+      /* Project Card Hover */
+      .project-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.05);
+      }
+
+      /* Process Timeline */
+      .timeline-line {
+        background: linear-gradient(
+          to bottom,
+          var(--timeline-from),
+          var(--timeline-mid),
+          var(--timeline-from)
+        );
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        display: none;
+      }
+      #mobile-menu.open {
+        display: flex;
+      }
+
+      /* ── Light Mode: Tailwind color overrides ── */
+      [data-theme="light"] #navbar {
+        background-color: rgba(244, 244, 242, 0.92) !important;
+        border-color: rgba(0, 0, 0, 0.06) !important;
+      }
+
+      [data-theme="light"] #process,
+      [data-theme="light"] #contact {
+        background-color: var(--bg-section) !important;
+      }
+
+      [data-theme="light"] .text-ash-100 {
+        color: #1a1a1a !important;
+      }
+      [data-theme="light"] .text-ash-200 {
+        color: #31312f !important;
+      }
+      [data-theme="light"] .text-ash-300 {
+        color: #454542 !important;
+      }
+      [data-theme="light"] .text-ash-400 {
+        color: #555551 !important;
+      }
+      [data-theme="light"] .text-ash-500 {
+        color: #6b6b67 !important;
+      }
+      [data-theme="light"] .text-ash-600 {
+        color: #8a8a84 !important;
+      }
+      [data-theme="light"] .text-ash-700 {
+        color: #c8c8c4 !important;
+      }
+
+      [data-theme="light"] .hover\:text-ash-100:hover {
+        color: #1a1a1a !important;
+      }
+      [data-theme="light"] .hover\:text-ash-200:hover {
+        color: #31312f !important;
+      }
+      [data-theme="light"] .hover\:text-ash-300:hover {
+        color: #454542 !important;
+      }
+      [data-theme="light"] .group:hover .group-hover\:text-ash-100 {
+        color: #1a1a1a !important;
+      }
+
+      [data-theme="light"] .bg-\[\#161616\] {
+        background-color: var(--bg-panel-alt) !important;
+      }
+      [data-theme="light"] .bg-\[\#161616\]\/50 {
+        background-color: rgba(234, 234, 232, 0.5) !important;
+      }
+      [data-theme="light"] .bg-ash-900\/20 {
+        background-color: rgba(200, 200, 196, 0.15) !important;
+      }
+      [data-theme="light"] .bg-ash-900\/30 {
+        background-color: rgba(200, 200, 196, 0.2) !important;
+      }
+      [data-theme="light"] .bg-ash-900\/50 {
+        background-color: rgba(200, 200, 196, 0.25) !important;
+      }
+      [data-theme="light"] .bg-ash-800 {
+        background-color: #d0d0cc !important;
+      }
+      [data-theme="light"] .bg-ash-800\/60 {
+        background-color: rgba(208, 208, 204, 0.6) !important;
+      }
+      [data-theme="light"] .bg-ash-800\/20 {
+        background-color: rgba(208, 208, 204, 0.2) !important;
+      }
+      [data-theme="light"] .bg-ash-600 {
+        background-color: #8a8a84 !important;
+      }
+      [data-theme="light"] .bg-ash-500 {
+        background-color: #6b6b67 !important;
+      }
+      [data-theme="light"] .bg-ash-400 {
+        background-color: #6b6b67 !important;
+      }
+      [data-theme="light"] .bg-ash-300 {
+        background-color: #555551 !important;
+      }
+
+      [data-theme="light"] .border-white\/\[0\.02\] {
+        border-color: rgba(0, 0, 0, 0.05) !important;
+      }
+      [data-theme="light"] .border-white\/\[0\.03\] {
+        border-color: rgba(0, 0, 0, 0.07) !important;
+      }
+      [data-theme="light"] .border-white\/\[0\.05\] {
+        border-color: rgba(0, 0, 0, 0.09) !important;
+      }
+      [data-theme="light"] .border-white\/\[0\.08\] {
+        border-color: rgba(0, 0, 0, 0.12) !important;
+      }
+      [data-theme="light"] .border-ash-700 {
+        border-color: #d0d0cc !important;
+      }
+      [data-theme="light"] .border-ash-800 {
+        border-color: #dcdcda !important;
+      }
+      [data-theme="light"] .border-\[\#0f0f0f\] {
+        border-color: var(--bg-section) !important;
+      }
+
+      [data-theme="light"] input,
+      [data-theme="light"] textarea,
+      [data-theme="light"] select {
+        color: #1a1a1a;
+      }
+      [data-theme="light"] input::placeholder,
+      [data-theme="light"] textarea::placeholder {
+        color: #a6a6a0;
+      }
+      [data-theme="light"] option {
+        background-color: var(--bg-primary);
+        color: #1a1a1a;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-40 px-6 lg:px-16 py-6 flex flex-col backdrop-blur-md bg-deep-charcoal/90 border-b border-white/[0.02] transition-all duration-300"
+      id="navbar"
+    >
+      <div class="flex justify-between items-center">
+        <a
+          href="#"
+          class="font-mono text-ash-300 font-medium text-lg tracking-tight hover:text-ash-100 transition-colors"
+          aria-label="Home"
+        >
+          dolapo—dev
+        </a>
+
+        <div
+          class="hidden md:flex space-x-10 font-sans text-sm text-ash-500 font-medium"
+        >
+          <a
+            href="#work"
+            class="hover:text-ash-200 transition-colors duration-300 relative group"
+          >
+            Work
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-px bg-ash-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#process"
+            class="hover:text-ash-200 transition-colors duration-300 relative group"
+          >
+            Process
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-px bg-ash-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#about"
+            class="hover:text-ash-200 transition-colors duration-300 relative group"
+          >
+            About
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-px bg-ash-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="hover:text-ash-200 transition-colors duration-300 relative group"
+          >
+            Contact
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-px bg-ash-400 transition-all group-hover:w-full"
+            ></span>
+          </a>
         </div>
-    </div>
-    <section class="dev-follow">
-        <div class="container">
-            <div class="row">
-                <div class="col"><iframe class="text-center" src="https://platform.twitter.com/widgets/follow_button.html?screen_name=sibuzuxi&amp;show_screen_name=true&amp;show_count=true" allowtransparency="true" frameborder="0" scrolling="no" title="Follow sibuzuxi on Twitter"
-                        width="250" height="30"></iframe></div>
-            </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="soft-button w-9 h-9 rounded-full flex items-center justify-center text-ash-500 hover:text-ash-300 transition-colors"
+            aria-label="Toggle light/dark theme"
+          >
+            <svg
+              id="theme-icon-moon"
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <svg
+              id="theme-icon-sun"
+              class="w-4 h-4 hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="menu-toggle"
+            class="soft-button px-6 py-2 rounded-full text-xs font-medium text-ash-400 uppercase tracking-widest hover:text-ash-200 md:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            Menu
+          </button>
         </div>
-    </section>
-    <section id="one">
-        <div class="container">
-            <div class="row" style="padding-top: 30px;">
-                <div class="col-6 col-lg-6" style="padding-top: 30px;">
-                    <div class="text-center text-sm-center text-md-center text-lg-center text-xl-center d-inline-block" id="devcondiv" style="background-color: rgba(255,255,255,0.39);margin: 20px;width: 100%;max-width: none;">
-                        <div class="d-inline-block"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/html5-plain-wordmark.svg" style="margin: 20px;width: 120px;"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/bootstrap-plain-wordmark.svg" style="margin: 20;width: 120px;height: 150px;">
-                            <img
-                                class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/css3-plain-wordmark.svg" style="margin: 20;width: 120px;"></div>
-                        <div class="d-inline-block"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/linux-original.svg" style="margin: 20px;width: 120px;"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/nodejs-plain.svg" style="margin: 20;width: 120px;height: 150px;">
-                            <img
-                                class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/mongodb-original.svg" style="margin: 20;width: 120px;"></div>
-                        <div class="d-inline-block"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/visualstudio-plain.svg" style="margin: 20px;width: 120px;"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/ubuntu-plain.svg" style="margin: 20;width: 120px;height: 150px;">
-                            <img
-                                class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/javascript-original.svg" style="margin: 20;width: 120px;"></div>
-                        <div class="d-inline-block"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/npm-original-wordmark.svg" style="margin: 20px;width: 120px;"><img class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/slack-original.svg" style="margin: 20;width: 120px;height: 150px;">
-                            <img
-                                class="shadow-sm" data-bs-hover-animate="pulse" id="devcons" src="/assets/img/github-original.svg" style="margin: 20;width: 120px;"></div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="flex-col gap-4 pt-6 pb-2 md:hidden font-sans text-sm text-ash-400 font-medium"
+      >
+        <a href="#work" class="hover:text-ash-200 transition-colors">Work</a>
+        <a href="#process" class="hover:text-ash-200 transition-colors"
+          >Process</a
+        >
+        <a href="#about" class="hover:text-ash-200 transition-colors">About</a>
+        <a href="#contact" class="hover:text-ash-200 transition-colors"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center px-6 lg:px-16 pt-32 pb-20"
+      aria-label="Introduction"
+    >
+      <div class="w-full max-w-[1600px] mx-auto">
+        <div class="grid-12 items-center">
+          <!-- Left Content -->
+          <div
+            class="col-span-12 lg:col-span-5 space-y-10 z-10 relative reveal active"
+          >
+            <div class="space-y-3">
+              <p
+                class="font-mono text-ash-500 text-xs tracking-[0.2em] uppercase"
+              >
+                Frontend Engineer
+              </p>
+              <h1
+                class="font-sans font-bold text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-ash-100"
+              >
+                Building<br />
+                <span class="text-ash-400 font-light italic">products that</span
+                ><br />
+                perform and<br />
+                <span class="text-ash-200">feel right.</span>
+              </h1>
+            </div>
+
+            <p
+              class="font-sans text-ash-400 text-lg leading-relaxed max-w-md font-light border-l-2 border-ash-700 pl-6"
+            >
+              React &amp; TypeScript specialist across fintech, Web3, and EdTech
+              platforms. I build interfaces that are fast, accessible, and built
+              to last.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-6">
+              <a
+                href="#work"
+                class="soft-button-primary px-8 py-4 rounded-full text-ash-200 font-sans font-medium text-sm tracking-wide text-center inline-block"
+              >
+                View Selected Work
+              </a>
+
+              <a
+                href="#contact"
+                class="soft-button px-8 py-4 rounded-full text-ash-400 font-sans font-medium text-sm tracking-wide text-center inline-block"
+              >
+                Start a Project
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-3 gap-8 pt-12 border-t border-white/[0.05]"
+            >
+              <div>
+                <div class="font-mono text-2xl text-ash-200 font-light">4+</div>
+                <div
+                  class="text-[10px] text-ash-600 uppercase tracking-widest mt-2"
+                >
+                  Years Experience
+                </div>
+              </div>
+              <div>
+                <div class="font-mono text-2xl text-ash-200 font-light">3</div>
+                <div
+                  class="text-[10px] text-ash-600 uppercase tracking-widest mt-2"
+                >
+                  Industries
+                </div>
+              </div>
+              <div>
+                <div class="font-mono text-2xl text-ash-200 font-light">
+                  100%
+                </div>
+                <div
+                  class="text-[10px] text-ash-600 uppercase tracking-widest mt-2"
+                >
+                  TypeScript
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content (Visual Composition) -->
+          <div
+            class="col-span-12 lg:col-span-7 relative h-[600px] lg:h-[800px] flex items-center justify-center mt-12 lg:mt-0"
+          >
+            <!-- Blueprint Layer -->
+            <div
+              class="absolute left-0 lg:left-[-5%] top-[5%] w-[85%] max-w-lg z-0 opacity-90 reveal active"
+              style="transition-delay: 200ms"
+            >
+              <div
+                class="soft-panel rounded-2xl p-8 arch-grid relative overflow-hidden"
+              >
+                <div
+                  class="flex items-center justify-between mb-8 border-b border-white/[0.05] pb-4"
+                >
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 rounded-full bg-ash-600"></div>
+                    <span class="font-mono text-ash-500 text-xs"
+                      >component.architecture</span
+                    >
+                  </div>
+                  <div class="font-mono text-[10px] text-ash-700">tsx</div>
+                </div>
+
+                <pre
+                  class="font-mono text-xs lg:text-sm text-ash-600 leading-loose overflow-hidden"
+                ><code><span class="syntax-comment">// Composable, typed, performant</span>
+<span class="syntax-keyword">interface</span> <span class="syntax-func">Platform</span> {
+  stack: <span class="syntax-string">'React + TypeScript'</span>;
+  domain: <span class="syntax-string">'Fintech | Web3 | EdTech'</span>;
+  quality: <span class="syntax-string">'Production'</span>;
+}
+
+<span class="syntax-keyword">const</span> <span class="syntax-func">ship</span> = () => {
+  <span class="syntax-keyword">return</span> {
+    performance: <span class="syntax-string">'Optimised'</span>,
+    ux: <span class="syntax-string">'Precise &amp; Accessible'</span>
+  };
+};</code></pre>
+
+                <div
+                  class="absolute top-20 right-8 w-16 h-16 border-r border-t border-ash-700/30"
+                ></div>
+                <div
+                  class="absolute bottom-8 left-8 w-24 h-24 border-l border-b border-ash-700/30"
+                ></div>
+              </div>
+            </div>
+
+            <!-- UI Layer -->
+            <div
+              class="absolute right-0 lg:right-[-5%] bottom-[10%] w-[80%] max-w-md z-10 reveal active"
+              style="transition-delay: 400ms"
+            >
+              <div
+                class="soft-panel rounded-3xl p-2 transform rotate-1 hover:rotate-0 transition-transform duration-700 ease-out"
+              >
+                <div
+                  class="bg-[#161616] rounded-2xl p-6 h-full border border-white/[0.03]"
+                >
+                  <div
+                    class="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.05]"
+                  >
+                    <div class="flex gap-2">
+                      <div
+                        class="w-3 h-3 rounded-full bg-ash-800 border border-ash-700"
+                      ></div>
+                      <div
+                        class="w-3 h-3 rounded-full bg-ash-800 border border-ash-700"
+                      ></div>
                     </div>
-                </div>
-                <div class="col-6 d-block">
-                    <h2 class="text-monospace text-capitalize">Core Skills</h2>
-                    <p style="padding-top: 30px;"><br>Hi there, I’m <strong>Bamidele Dolapo</strong>&nbsp; a front &amp; back-end developer based in Lagos.<br><br></p>
-                    <p>With over 2 years of hands-on web development, I specialise in creating and building carefully-crafted, responsive websites and applications.<br><br></p>
-                    <p>I strive for design and code perfection. My previous work has been experienced by hundreds of users worldwide every year, using the best front-end and back-end technologies such as<strong>&nbsp;HTML5, CSS3, Javascript, Mongodb and NodeJS.</strong><br><br><br></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="two" class="projects">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="text-monospace text-center text-sm-center text-md-center text-lg-center text-xl-center" style="margin-top: 20px;margin-bottom: 20px;">Projects</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 text-center project-item" style="padding-top: 10px;">
-                    <a class="project-link" data-toggle="modal" href="#projectModal-1" style="color: rgb(254,209,54);">
-                        <div class="project-hover" style="background-color: rgb(254,209,54);"></div><img class="rounded-circle img-fluid" src="/assets/img/barcode%20csacademy.png" width="70%" height="70%"></a>
-                    <div class="project-caption">
-                        <h4>Name</h4>
-                        <p class="text-muted">Illustration</p>
+                    <div class="flex-1 mx-4">
+                      <div
+                        class="bg-ash-900/50 rounded-full px-4 py-1.5 text-[10px] text-ash-600 text-center font-mono border border-white/[0.03]"
+                      >
+                        dolapo.dev
+                      </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 text-center project-item" style="padding-top: 10px;">
-                    <a class="project-link" data-toggle="modal" href="#projectModal-1" style="color: rgb(254,209,54);">
-                        <div class="project-hover" style="background-color: rgb(254,209,54);"></div><img class="rounded-circle img-fluid" src="/assets/img/barcode%20csacademy.png" width="70%" height="70%"></a>
-                    <div class="project-caption">
-                        <h4>Name</h4>
-                        <p class="text-muted">Illustration</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 text-center project-item" style="padding-top: 10px;">
-                    <a class="project-link" data-toggle="modal" href="#projectModal-1" style="color: rgb(254,209,54);">
-                        <div class="project-hover" style="background-color: rgb(254,209,54);"></div><img class="rounded-circle img-fluid" src="/assets/img/barcode%20csacademy.png" width="70%" height="70%"></a>
-                    <div class="project-caption">
-                        <h4>Name</h4>
-                        <p class="text-muted">Illustration</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="three" class="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center" style="padding-top: 40px;padding-bottom: 40px;"><button class="btn btn-primary text-monospace text-capitalize text-center" data-toggle="modal" data-target="#modal1" type="button" style="width: 120px;">Contact</button></div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center footer" id="four" style="margin-bottom: 50px;">
-        <div class="container" style="color: transparent;">
-            <div class="footer-2" style="background-color: transparent;">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-8 col-sm-6 col-md-6 col-lg-6 offset-2 offset-sm-3 offset-lg-3 text-center"><a href="https://twitter.com/sibuzuxi" style="margin-right: 10px;margin-left: 10px;"><i class="fa fa-twitter" style="font-size: 50px;"></i></a><a href="https://github.com/dbcxx" style="margin-right: 10px;margin-left: 10px;"><i class="fa fa-github" style="font-size: 50px;"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="modal fade project-modal text-center" role="dialog" tabindex="-1" id="projectModal-1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2><img class="img-fluid d-block mx-auto" src="/assets/img/cartoons-spongebob-squarepants-hd-wallpaper-cartoons-spongebob-squarepants-891868.jpg">
-                                    <p>project description</p>
-                                    <ul class="list-unstyled"></ul><button class="btn btn-primary" type="button" data-dismiss="modal"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
+                    <div class="w-8"></div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <div
+                      class="h-32 bg-gradient-to-br from-ash-800/20 to-ash-900/20 rounded-xl relative overflow-hidden border border-white/[0.03]"
+                    >
+                      <div
+                        class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"
+                      ></div>
+                      <div
+                        class="absolute inset-0 flex items-center justify-center"
+                      >
+                        <div
+                          class="w-12 h-12 rounded-full bg-ash-800 border border-ash-700 flex items-center justify-center"
+                        >
+                          <div class="w-4 h-4 bg-ash-400 rounded-sm"></div>
                         </div>
+                      </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="modal fade text-center" role="dialog" tabindex="-1" id="modal1">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4>Contact Information</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                    <div class="modal-body text-center">
-                        <form class="text-left" id="contactForm"><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.mywebsite.com"><input class="form-control" type="hidden" name="subject" value="My Contact Form"><input class="form-control" type="hidden"
-                                name="to" value="email@mywebsite.com">
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div id="modal-successfail"></div>
-                                </div>
-                            </div>
-                            <div class="form-row text-monospace text-left">
-                                <div class="col-8 align-self-center m-auto" id="modal-message" style="max-width: 1000%;min-width: auto;">
-                                    <fieldset>
-                                        <legend class="text-monospace"><i class="fa fa-envelope"></i> Contact&nbsp;</legend>
-                                    </fieldset>
-                                    <div class="form-group has-feedback"><label for="modal_from_name">Name</label><input class="form-control" type="text" id="modal_from_name" tabindex="-1" name="from_name" required="" placeholder="Full Name"></div>
-                                    <div class="form-group has-feedback"><label for="modal_from_email">Email</label><input class="form-control" type="email" id="modal_from_email" name="from_email" required="" placeholder="Email Address"></div>
-                                    <div class="form-group"><label for="modal_comments">Comments</label><textarea class="form-control" id="modal_comments" name="Comments" placeholder="Enter comments here" rows="5"></textarea></div>
-                                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send <i class="fa fa-chevron-circle-right"></i></button></div>
-                                    <hr>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/smart-forms.min.js"></script>
-    <script src="/assets/js/bs-init.js"></script>
-    <script src="/assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
-</body>
 
+                    <div class="space-y-2 px-2">
+                      <div class="h-2 bg-ash-800 rounded-full w-1/3"></div>
+                      <div class="h-2 bg-ash-800/60 rounded-full w-3/4"></div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                      <div
+                        class="aspect-square rounded-lg bg-ash-900/30 border border-white/[0.03]"
+                      ></div>
+                      <div
+                        class="aspect-square rounded-lg bg-ash-900/30 border border-white/[0.03]"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="absolute -right-4 top-1/3 soft-panel px-4 py-2 rounded-full text-[10px] font-mono text-ash-500 hidden lg:block"
+              >
+                built_with_care
+              </div>
+            </div>
+
+            <svg
+              class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-20"
+              style="overflow: visible"
+              aria-hidden="true"
+            >
+              <line
+                x1="30%"
+                y1="40%"
+                x2="70%"
+                y2="60%"
+                stroke="#3a3a38"
+                stroke-width="1"
+                stroke-dasharray="4 4"
+              />
+              <circle cx="30%" cy="40%" r="3" fill="#6b6b67" />
+              <circle cx="70%" cy="60%" r="3" fill="#6b6b67" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40 hover:opacity-70 transition-opacity cursor-pointer"
+      >
+        <span
+          class="text-[10px] font-mono text-ash-500 uppercase tracking-[0.3em]"
+          >Scroll</span
+        >
+        <div
+          class="w-px h-8 bg-gradient-to-b from-ash-600 to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Selected Work Section -->
+    <section
+      id="work"
+      class="relative px-6 lg:px-16 py-32 border-t border-white/[0.03]"
+      aria-label="Selected Projects"
+    >
+      <div class="w-full max-w-[1600px] mx-auto">
+        <div class="grid-12 mb-20">
+          <div class="col-span-12 lg:col-span-4 reveal">
+            <p
+              class="font-mono text-ash-500 text-xs tracking-[0.2em] uppercase mb-4"
+            >
+              Selected Work
+            </p>
+            <h2
+              class="font-sans font-bold text-4xl lg:text-5xl text-ash-100 leading-tight"
+            >
+              Projects built for
+              <span class="italic font-light text-ash-400">real users</span> in
+              real systems.
+            </h2>
+          </div>
+          <div
+            class="col-span-12 lg:col-span-4 lg:col-start-9 flex items-end reveal"
+            style="transition-delay: 200ms"
+          >
+            <p class="text-ash-500 font-light leading-relaxed">
+              Production platforms across fintech, Web3, and EdTech. Each
+              project reflects a focus on performance, clean architecture, and
+              user experience that holds up under real-world load.
+            </p>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="space-y-8">
+          <!-- Project 1 — FutureGate Academy -->
+          <article
+            class="project-card soft-panel rounded-2xl p-2 reveal cursor-pointer group"
+            style="transition-delay: 100ms"
+            data-lightbox-src="/assets/img/futuregate-home.png"
+            data-lightbox-alt="FutureGate Academy platform homepage"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl"
+            >
+              <div
+                class="group/img relative h-64 lg:h-96 bg-ash-900/20 overflow-hidden project-img-btn cursor-zoom-in"
+                data-src="/assets/img/futuregate-home.png"
+                data-alt="FutureGate Academy platform homepage"
+                role="button"
+                tabindex="0"
+                aria-label="View FutureGate screenshot"
+              >
+                <img
+                  class="project-image absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                  src="/assets/img/futuregate-home.png"
+                  alt="FutureGate Academy platform homepage showing student dashboard"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-ash-900/40 to-transparent"
+                ></div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity bg-black/30 pointer-events-none"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="w-10 h-10 text-white/80"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="p-8 lg:p-12 flex flex-col justify-center bg-[#161616]/50"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >EdTech</span
+                  >
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >Full Stack</span
+                  >
+                </div>
+                <h3
+                  class="font-sans text-2xl lg:text-3xl font-semibold text-ash-200 mb-4 group-hover:text-ash-100 transition-colors"
+                >
+                  FutureGate Academy Platform
+                </h3>
+                <p class="text-ash-500 font-light mb-6 leading-relaxed">
+                  EdTech platform managing structured student data with a
+                  real-time course progress dashboard. Built with reusable React
+                  hooks and protected auth flows to safeguard student accounts
+                  across the learning portal.
+                </p>
+                <div
+                  class="flex items-center justify-between flex-wrap gap-y-3"
+                >
+                  <div
+                    class="flex items-center gap-4 font-mono text-xs text-ash-600"
+                  >
+                    <span>React</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>TypeScript</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>Custom Hooks</span>
+                  </div>
+                  <!-- TODO: replace href with FutureGate live URL -->
+                   <a
+                    href="https://futuregateacademy.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-mono text-xs text-ash-500 hover:text-ash-200 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    Live Site
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 — Mirald Scale -->
+          <article
+            class="project-card soft-panel rounded-2xl p-2 reveal cursor-pointer group"
+            style="transition-delay: 200ms"
+            data-lightbox-src="/assets/img/miraldscale-home.png"
+            data-lightbox-alt="Mirald Scale growth platform homepage"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl"
+            >
+              <div
+                class="p-8 lg:p-12 flex flex-col justify-center bg-[#161616]/50 order-2 lg:order-1"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >Frontend</span
+                  >
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >Performance</span
+                  >
+                </div>
+                <h3
+                  class="font-sans text-2xl lg:text-3xl font-semibold text-ash-200 mb-4 group-hover:text-ash-100 transition-colors"
+                >
+                  Mirald Scale Growth Platform
+                </h3>
+                <p class="text-ash-500 font-light mb-6 leading-relaxed">
+                  Modular React and TypeScript growth platform with multiple
+                  content modules. Improved Core Web Vitals through optimized
+                  rendering and image handling, integrated lead capture forms,
+                  and structured TypeScript interfaces across diverse content
+                  models.
+                </p>
+                <div
+                  class="flex items-center justify-between flex-wrap gap-y-3"
+                >
+                  <div
+                    class="flex items-center gap-4 font-mono text-xs text-ash-600"
+                  >
+                    <span>React</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>TypeScript</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>Tailwind CSS</span>
+                  </div>
+                  <!-- TODO: replace href with Mirald Scale live URL -->
+                  <a
+                    href="https://miraldscale.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-mono text-xs text-ash-500 hover:text-ash-200 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    Live Site
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="group/img relative h-64 lg:h-96 bg-ash-900/20 overflow-hidden order-1 lg:order-2 project-img-btn cursor-zoom-in"
+                data-src="/assets/img/miraldscale-home.png"
+                data-alt="Mirald Scale growth platform homepage"
+                role="button"
+                tabindex="0"
+                aria-label="View Mirald Scale screenshot"
+              >
+                <img
+                  class="project-image absolute inset-0 w-full h-full object-cover transition-transform duration-700"
+                  src="/assets/img/miraldscale-home.png"
+                  alt="Mirald Scale growth platform homepage"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-bl from-ash-900/40 to-transparent"
+                ></div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity bg-black/30 pointer-events-none"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="w-10 h-10 text-white/80"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 — Token House Agency -->
+          <article
+            class="project-card soft-panel rounded-2xl p-2 reveal cursor-pointer group"
+            style="transition-delay: 300ms"
+          >
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl"
+            >
+              <div class="relative h-64 lg:h-96 bg-ash-900/20 overflow-hidden">
+                <div
+                  class="project-image absolute inset-0 bg-gradient-to-br from-ash-800/30 to-ash-900/30 transition-transform duration-700"
+                ></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="grid grid-cols-2 gap-4 opacity-60">
+                    <div
+                      class="w-12 h-12 border border-ash-700 rounded-lg"
+                    ></div>
+                    <div
+                      class="w-12 h-12 border border-ash-600 rounded-lg mt-4"
+                    ></div>
+                    <div
+                      class="w-12 h-12 border border-ash-600 rounded-lg -mt-4"
+                    ></div>
+                    <div
+                      class="w-12 h-12 border border-ash-700 rounded-lg"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-8 lg:p-12 flex flex-col justify-center bg-[#161616]/50"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >Web3</span
+                  >
+                  <span
+                    class="font-mono text-[10px] text-ash-600 uppercase tracking-widest border border-ash-800 px-2 py-1 rounded"
+                    >Fintech</span
+                  >
+                </div>
+                <h3
+                  class="font-sans text-2xl lg:text-3xl font-semibold text-ash-200 mb-4 group-hover:text-ash-100 transition-colors"
+                >
+                  Web3 Token Sale Dashboards
+                </h3>
+                <p class="text-ash-500 font-light mb-6 leading-relaxed">
+                  Real-time cryptocurrency token sale dashboards managing
+                  financial data visualization across multi-user interfaces.
+                  Strict TypeScript typing across financial modules reduced
+                  runtime errors during high-traffic token launches.
+                </p>
+                <div
+                  class="flex items-center justify-between flex-wrap gap-y-3"
+                >
+                  <div
+                    class="flex items-center gap-4 font-mono text-xs text-ash-600"
+                  >
+                    <span>React</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>TypeScript</span>
+                    <span class="w-1 h-1 rounded-full bg-ash-700"></span>
+                    <span>REST APIs</span>
+                  </div>
+                  <!-- TODO: replace href with Token House live URL -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-mono text-xs text-ash-500 hover:text-ash-200 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    Live Site
+                    <svg
+                      class="w-3 h-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TODO: add side project — replace this comment block with your next project card -->
+        </div>
+
+        <div class="mt-16 text-center reveal">
+          <a
+            href="https://github.com/dbcxx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="soft-button px-8 py-4 rounded-full text-ash-400 font-sans font-medium text-sm tracking-wide inline-flex items-center gap-2 hover:text-ash-200"
+          >
+            More on GitHub
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section
+      id="process"
+      class="relative px-6 lg:px-16 py-32 border-t border-white/[0.03] bg-[#0f0f0f]"
+      aria-label="Process"
+    >
+      <div class="w-full max-w-[1600px] mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-24 reveal">
+          <p
+            class="font-mono text-ash-500 text-xs tracking-[0.2em] uppercase mb-4"
+          >
+            Approach
+          </p>
+          <h2
+            class="font-sans font-bold text-4xl lg:text-5xl text-ash-100 leading-tight mb-6"
+          >
+            From <span class="italic font-light">Architecture</span> to
+            <span class="italic font-light">Delivery</span>
+          </h2>
+          <p class="text-ash-500 font-light">
+            A disciplined approach honed across production systems in fintech,
+            Web3, and EdTech.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div
+            class="absolute left-1/2 transform -translate-x-1/2 h-full w-px timeline-line hidden lg:block"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Step 1 -->
+          <div class="grid-12 items-center mb-20 lg:mb-32 reveal">
+            <div
+              class="col-span-12 lg:col-span-5 lg:text-right pr-0 lg:pr-12 order-2 lg:order-1"
+            >
+              <div class="soft-panel rounded-2xl p-8 inline-block">
+                <div class="font-mono text-4xl font-bold text-ash-800 mb-2">
+                  01
+                </div>
+                <h3 class="font-sans text-xl font-semibold text-ash-200 mb-3">
+                  Structural Thinking
+                </h3>
+                <p class="text-ash-500 font-light text-sm leading-relaxed">
+                  Every project starts with component architecture, data flow,
+                  and API contracts mapped before code is written. Type
+                  interfaces defined early prevent entire categories of bugs
+                  downstream.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-span-12 lg:col-span-2 flex justify-center order-1 lg:order-2 mb-8 lg:mb-0"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-ash-600 border-4 border-[#0f0f0f] relative z-10"
+              ></div>
+            </div>
+            <div class="col-span-12 lg:col-span-5 order-3 hidden lg:block">
+              <div
+                class="font-mono text-xs text-ash-700 uppercase tracking-widest"
+              >
+                Foundation Phase
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="grid-12 items-center mb-20 lg:mb-32 reveal">
+            <div
+              class="col-span-12 lg:col-span-5 order-3 lg:order-1 hidden lg:block text-right"
+            >
+              <div
+                class="font-mono text-xs text-ash-700 uppercase tracking-widest"
+              >
+                Build Phase
+              </div>
+            </div>
+            <div
+              class="col-span-12 lg:col-span-2 flex justify-center order-1 lg:order-2 mb-8 lg:mb-0"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-ash-500 border-4 border-[#0f0f0f] relative z-10"
+              ></div>
+            </div>
+            <div
+              class="col-span-12 lg:col-span-5 pl-0 lg:pl-12 order-2 lg:order-3"
+            >
+              <div class="soft-panel rounded-2xl p-8 inline-block">
+                <div class="font-mono text-4xl font-bold text-ash-800 mb-2">
+                  02
+                </div>
+                <h3 class="font-sans text-xl font-semibold text-ash-200 mb-3">
+                  Reusable Development
+                </h3>
+                <p class="text-ash-500 font-light text-sm leading-relaxed">
+                  Custom hooks, typed component libraries, and modular
+                  architecture that reduce feature deployment time. Code written
+                  once, used many times — with the confidence that TypeScript
+                  brings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="grid-12 items-center reveal">
+            <div
+              class="col-span-12 lg:col-span-5 lg:text-right pr-0 lg:pr-12 order-2 lg:order-1"
+            >
+              <div class="soft-panel rounded-2xl p-8 inline-block">
+                <div class="font-mono text-4xl font-bold text-ash-800 mb-2">
+                  03
+                </div>
+                <h3 class="font-sans text-xl font-semibold text-ash-200 mb-3">
+                  Optimised Delivery
+                </h3>
+                <p class="text-ash-500 font-light text-sm leading-relaxed">
+                  Core Web Vitals, accessibility, and performance tuning before
+                  launch. Responsive across every device, protected routing
+                  where it matters, stable under production traffic.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-span-12 lg:col-span-2 flex justify-center order-1 lg:order-2 mb-8 lg:mb-0"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-ash-300 border-4 border-[#0f0f0f] relative z-10"
+              ></div>
+            </div>
+            <div class="col-span-12 lg:col-span-5 order-3 hidden lg:block">
+              <div
+                class="font-mono text-xs text-ash-700 uppercase tracking-widest"
+              >
+                Polish Phase
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="relative px-6 lg:px-16 py-32 border-t border-white/[0.03]"
+      aria-label="About"
+    >
+      <div class="w-full max-w-[1600px] mx-auto">
+        <div class="grid-12 gap-8 lg:gap-16">
+          <div class="col-span-12 lg:col-span-5 reveal">
+            <div class="lg:sticky lg:top-32">
+              <p
+                class="font-mono text-ash-500 text-xs tracking-[0.2em] uppercase mb-4"
+              >
+                Background
+              </p>
+              <h2
+                class="font-sans font-bold text-4xl lg:text-5xl text-ash-100 leading-tight mb-8"
+              >
+                Frontend roots.<br />
+                <span class="text-ash-400 font-light italic">Production</span>
+                mindset.
+              </h2>
+              <div class="soft-panel rounded-2xl p-8 arch-grid">
+                <div class="space-y-4 font-mono text-sm text-ash-600">
+                  <div
+                    class="flex justify-between border-b border-white/[0.05] pb-2"
+                  >
+                    <span>Location</span>
+                    <span class="text-ash-400">Lagos, Nigeria</span>
+                  </div>
+                  <div
+                    class="flex justify-between border-b border-white/[0.05] pb-2"
+                  >
+                    <span>Experience</span>
+                    <span class="text-ash-400">4+ Years</span>
+                  </div>
+                  <div
+                    class="flex justify-between border-b border-white/[0.05] pb-2"
+                  >
+                    <span>Focus</span>
+                    <span class="text-ash-400">Frontend Engineering</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Open to</span>
+                    <span class="text-ash-400">Remote roles</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-span-12 lg:col-span-6 lg:col-start-7 space-y-8 reveal"
+            style="transition-delay: 200ms"
+          >
+            <div class="prose prose-invert prose-ash max-w-none">
+              <p class="text-lg text-ash-300 leading-relaxed font-light">
+                I'm a frontend engineer based in Lagos, specializing in React
+                and TypeScript. I've shipped production platforms across
+                fintech, Web3, and EdTech — from real-time crypto dashboards to
+                student learning portals.
+              </p>
+              <p class="text-lg text-ash-300 leading-relaxed font-light">
+                I care about performance, clean architecture, and interfaces
+                that work for everyone. My background spans secure
+                authentication systems, reusable component libraries, and
+                data-heavy dashboards that stay stable under load.
+              </p>
+              <p class="text-ash-400 leading-relaxed">
+                I hold a B.Sc. in Computer Engineering from Obafemi Awolowo
+                University. Over four years in production environments have
+                shaped a discipline-first approach: structure early, type
+                everything, and optimize before shipping.
+              </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="pt-8 border-t border-white/[0.05]">
+              <h3
+                class="font-mono text-xs text-ash-600 uppercase tracking-widest mb-6"
+              >
+                Technical Skills
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="soft-panel rounded-xl p-4">
+                  <div class="font-mono text-xs text-ash-500 mb-2">
+                    Languages
+                  </div>
+                  <div class="text-ash-300 text-sm">
+                    JavaScript ES6+, TypeScript, HTML5, CSS3
+                  </div>
+                </div>
+                <div class="soft-panel rounded-xl p-4">
+                  <div class="font-mono text-xs text-ash-500 mb-2">
+                    Frameworks
+                  </div>
+                  <div class="text-ash-300 text-sm">
+                    React.js, Next.js, Tailwind CSS, Redux
+                  </div>
+                </div>
+                <div class="soft-panel rounded-xl p-4">
+                  <div class="font-mono text-xs text-ash-500 mb-2">
+                    Tools &amp; Infra
+                  </div>
+                  <div class="text-ash-300 text-sm">
+                    Git, Vercel, Netlify, Webpack, Figma
+                  </div>
+                </div>
+                <div class="soft-panel rounded-xl p-4">
+                  <div class="font-mono text-xs text-ash-500 mb-2">
+                    Databases
+                  </div>
+                  <div class="text-ash-300 text-sm">MongoDB, MySQL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="relative px-6 lg:px-16 py-32 border-t border-white/[0.03] bg-[#0f0f0f]"
+      aria-label="Contact"
+    >
+      <div class="w-full max-w-[1200px] mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <p
+            class="font-mono text-ash-500 text-xs tracking-[0.2em] uppercase mb-4"
+          >
+            Get in Touch
+          </p>
+          <h2
+            class="font-sans font-bold text-4xl lg:text-6xl text-ash-100 leading-tight mb-6"
+          >
+            Let's build something
+            <span class="italic font-light text-ash-400">that lasts</span>.
+          </h2>
+          <p class="text-ash-500 font-light text-lg">
+            Open for remote roles and select freelance projects.
+          </p>
+        </div>
+
+        <div class="grid-12 gap-8 reveal" style="transition-delay: 200ms">
+          <div class="col-span-12 lg:col-span-8 lg:col-start-3">
+            <form
+              id="contact-form"
+              class="soft-panel rounded-3xl p-8 lg:p-12 space-y-8"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-2">
+                  <label
+                    for="name"
+                    class="font-mono text-xs text-ash-600 uppercase tracking-widest"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full bg-transparent border-b border-ash-800 py-3 text-ash-200 focus:outline-none focus:border-ash-500 transition-colors placeholder-ash-700"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    for="email"
+                    class="font-mono text-xs text-ash-600 uppercase tracking-widest"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    data-fs-field
+                    class="w-full bg-transparent border-b border-ash-800 py-3 text-ash-200 focus:outline-none focus:border-ash-500 transition-colors placeholder-ash-700"
+                    placeholder="your@email.com"
+                  />
+                  <span
+                    data-fs-error="email"
+                    class="font-mono text-xs text-red-400 mt-1 block hidden"
+                  ></span>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  for="project"
+                  class="font-mono text-xs text-ash-600 uppercase tracking-widest"
+                  >Project Type</label
+                >
+                <select
+                  id="project"
+                  name="project"
+                  class="w-full bg-transparent border-b border-ash-800 py-3 text-ash-200 focus:outline-none focus:border-ash-500 transition-colors appearance-none cursor-pointer"
+                >
+                  <option value="" class="bg-[#1a1a1a]">
+                    Select a project type
+                  </option>
+                  <option value="web" class="bg-[#1a1a1a]">
+                    Web Application
+                  </option>
+                  <option value="frontend" class="bg-[#1a1a1a]">
+                    Frontend Development
+                  </option>
+                  <option value="consulting" class="bg-[#1a1a1a]">
+                    Technical Consulting
+                  </option>
+                  <option value="other" class="bg-[#1a1a1a]">Other</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label
+                  for="message"
+                  class="font-mono text-xs text-ash-600 uppercase tracking-widest"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full bg-transparent border-b border-ash-800 py-3 text-ash-200 focus:outline-none focus:border-ash-500 transition-colors placeholder-ash-700 resize-none"
+                  placeholder="Tell me about your project, timeline, and goals..."
+                ></textarea>
+              </div>
+
+              <div
+                data-fs-error
+                class="font-mono text-xs text-red-400 hidden"
+              ></div>
+              <div
+                data-fs-success
+                class="font-mono text-sm text-ash-300 text-center py-4 hidden"
+              >
+                Message sent — I'll be in touch soon.
+              </div>
+
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  data-fs-submit-btn
+                  class="soft-button-primary w-full py-4 rounded-full text-ash-200 font-sans font-medium text-sm tracking-wide hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Direct Contact Links -->
+        <div
+          class="mt-16 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 reveal"
+          style="transition-delay: 300ms"
+        >
+          <a
+            href="mailto:bamideledolapo.s@gmail.com"
+            class="group flex items-center gap-3 text-ash-400 hover:text-ash-200 transition-colors"
+          >
+            <span class="font-mono text-xs uppercase tracking-widest"
+              >Email</span
+            >
+            <span class="font-sans text-lg">bamideledolapo.s@gmail.com</span>
+            <svg
+              class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </a>
+          <div
+            class="w-px h-8 bg-ash-800 hidden md:block"
+            aria-hidden="true"
+          ></div>
+          <a
+            href="https://twitter.com/0xxdb"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 text-ash-400 hover:text-ash-200 transition-colors"
+          >
+            <span class="font-mono text-xs uppercase tracking-widest"
+              >Twitter</span
+            >
+            <span class="font-sans text-lg">@0xxdb</span>
+            <svg
+              class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </a>
+          <div
+            class="w-px h-8 bg-ash-800 hidden md:block"
+            aria-hidden="true"
+          ></div>
+          <a
+            href="https://github.com/dbcxx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 text-ash-400 hover:text-ash-200 transition-colors"
+          >
+            <span class="font-mono text-xs uppercase tracking-widest"
+              >GitHub</span
+            >
+            <span class="font-sans text-lg">@dbcxx</span>
+            <svg
+              class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="relative px-6 lg:px-16 py-12 border-t border-white/[0.03]"
+      role="contentinfo"
+    >
+      <div class="w-full max-w-[1600px] mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <div class="font-mono text-ash-600 text-sm">
+            © 2026 Dolapo Bamidele. All rights reserved.
+          </div>
+
+          <div class="flex items-center gap-8">
+            <a
+              href="https://github.com/dbcxx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-mono text-xs text-ash-600 uppercase tracking-widest hover:text-ash-400 transition-colors"
+              >GitHub</a
+            >
+            <a
+              href="https://twitter.com/0xxdb"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-mono text-xs text-ash-600 uppercase tracking-widest hover:text-ash-400 transition-colors"
+              >Twitter</a
+            >
+            <a
+              href="mailto:bamideledolapo.s@gmail.com"
+              class="font-mono text-xs text-ash-600 uppercase tracking-widest hover:text-ash-400 transition-colors"
+              >Email</a
+            >
+          </div>
+
+          <button
+            type="button"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="soft-button w-10 h-10 rounded-full flex items-center justify-center text-ash-500 hover:text-ash-300 transition-colors"
+            aria-label="Back to top"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox overlay -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-50 items-center justify-center bg-black/90 backdrop-blur-sm"
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button
+        type="button"
+        id="lightbox-close"
+        class="absolute top-6 right-6 text-ash-400 hover:text-ash-200 transition-colors"
+        aria-label="Close image viewer"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl"
+      />
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.textContent = isOpen ? "Close" : "Menu";
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "Menu";
+        });
+      });
+
+      // Intersection Observer for reveal animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal").forEach((element) => {
+        observer.observe(element);
+      });
+
+      // Navbar shrink on scroll
+      const navbar = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          navbar.classList.add("py-4");
+          navbar.classList.remove("py-6");
+        } else {
+          navbar.classList.add("py-6");
+          navbar.classList.remove("py-4");
+        }
+      });
+
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+        document.getElementById("lightbox-close").focus();
+      }
+
+      function closeLightbox() {
+        lightbox.style.display = "none";
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".project-img-btn").forEach((btn) => {
+        btn.addEventListener("click", () =>
+          openLightbox(btn.dataset.src, btn.dataset.alt),
+        );
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(btn.dataset.src, btn.dataset.alt);
+          }
+        });
+      });
+
+      document
+        .getElementById("lightbox-close")
+        .addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Theme toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const moonIcon = document.getElementById("theme-icon-moon");
+      const sunIcon = document.getElementById("theme-icon-sun");
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+      function applyTheme(theme) {
+        if (theme === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+          moonIcon.classList.add("hidden");
+          sunIcon.classList.remove("hidden");
+          metaTheme.setAttribute("content", "#f4f4f2");
+        } else {
+          document.documentElement.removeAttribute("data-theme");
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+          metaTheme.setAttribute("content", "#121212");
+        }
+      }
+
+      // Sync icon with the theme already set by the anti-FOUC script
+      if (document.documentElement.getAttribute("data-theme") === "light") {
+        moonIcon.classList.add("hidden");
+        sunIcon.classList.remove("hidden");
+        metaTheme.setAttribute("content", "#f4f4f2");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const isLight =
+          document.documentElement.getAttribute("data-theme") === "light";
+        const next = isLight ? "dark" : "light";
+        applyTheme(next);
+        localStorage.setItem("theme", next);
+      });
+    </script>
+    <a
+      href="https://futuregateacademy.org"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="font-mono text-xs text-ash-500 hover:text-ash-200 transition-colors inline-flex items-center gap-1.5"
+    >
+      Live Site
+      <svg
+        class="w-3 h-3"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        />
+      </svg>
+    </a>
+
+    <!-- Formspree AJAX -->
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree("initForm", {
+        formElement: "#contact-form",
+        formId: "xzdyrarl",
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  </body>
 </html>
